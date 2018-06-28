@@ -9,6 +9,7 @@ class Song
   def self.new_by_filename(filename)
     filename_no_extension = filename.match(/(.+).mp3/).captures[0]
     artist_name, song_title, genre = filename_no_extension.split(/\s-\s/)
-    binding.pry
+    artist = Artist.find_or_create_by_name(artist_name)
+    artist.add_song(song_title)
   end
 end
