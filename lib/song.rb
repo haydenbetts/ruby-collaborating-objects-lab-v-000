@@ -7,5 +7,6 @@ class Song
 
   def new_by_filename(filename)
     filename_no_extension = filename.match(/(.+).mp3/).collect
-
+    
+  end
 end
