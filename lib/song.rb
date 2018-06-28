@@ -10,6 +10,6 @@ class Song
     filename_no_extension = filename.match(/(.+).mp3/).captures[0]
     artist_name, song_title, genre = filename_no_extension.split(/\s-\s/)
     artist = Artist.find_or_create_by_name(artist_name)
-    artist.add_song(song_title)
+    song = artist.add_song(song_title)
   end
 end
