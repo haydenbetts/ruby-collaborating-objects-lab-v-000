@@ -11,6 +11,5 @@ class Song
     artist_name, song_title, genre = filename_no_extension.split(/\s-\s/)
     artist = Artist.find_or_create_by_name(artist_name)
     song = artist.add_song(self.new(song_title))
-    binding.pry
   end
 end
